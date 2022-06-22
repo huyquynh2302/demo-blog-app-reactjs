@@ -12,7 +12,7 @@ export default function Settings() {
   const [success, setSuccess] = useState(false);
 
   const { user, dispatch } = useContext(Context);
-  const PF = "https://demo-mern-blog-app.herokuapp.com/images/"
+  const PF = "https://demo-blog-webapp.herokuapp.com/images/"
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -30,11 +30,11 @@ export default function Settings() {
       data.append("file", file);
       updatedUser.profilePic = filename;
       try {
-        await axios.post("https://demo-mern-blog-app.herokuapp.com/api/upload", data);
+        await axios.post("https://demo-blog-webapp.herokuapp.com/api/upload", data);
       } catch (err) {}
     }
     try {
-      const res = await axios.put("https://demo-mern-blog-app.herokuapp.com/api/users/" + user._id, updatedUser);
+      const res = await axios.put("https://demo-blog-webapp.herokuapp.com/api/users/" + user._id, updatedUser);
       setSuccess(true);
       dispatch({ type: "UPDATE_SUCCESS", payload: res.data });
     } catch (err) {
