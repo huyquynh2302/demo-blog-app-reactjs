@@ -23,11 +23,11 @@ export default function Write() {
       data.append("file", file);
       newPost.photo = filename;
       // try {
-      //   await axios.post("https://demo-blog-webapp.herokuapp.com/api/upload", data);
+      //   await axios.post("https://demo-webapp-blog.herokuapp.com/api/upload", data);
       // } catch (err) {}
     }
     try {
-      const res = await axios.post("https://demo-blog-webapp.herokuapp.com/api/posts", newPost);
+      const res = await axios.post("https://demo-webapp-blog.herokuapp.com/api/posts", newPost);
       window.location.replace("/post/" + res.data._id);
     } catch (err) {}
   };

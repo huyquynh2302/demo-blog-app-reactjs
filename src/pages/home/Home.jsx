@@ -12,7 +12,7 @@ export default function Home() {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const res = await axios.get("https://demo-blog-webapp.herokuapp.com/api/posts" + search);
+      const res = await axios.get("https://demo-webapp-blog.herokuapp.com/api/posts" + search);
       setPosts(res.data);
     };
     fetchPosts();
