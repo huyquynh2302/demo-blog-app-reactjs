@@ -29,9 +29,9 @@ export default function Settings() {
       data.append("name", filename);
       data.append("file", file);
       updatedUser.profilePic = filename;
-      try {
-        await axios.post("https://demo-blog-webapp.herokuapp.com/api/upload", data);
-      } catch (err) {}
+      // try {
+      //   await axios.post("https://demo-blog-webapp.herokuapp.com/api/upload", data);
+      // } catch (err) {}
     }
     try {
       const res = await axios.put("https://demo-blog-webapp.herokuapp.com/api/users/" + user._id, updatedUser);
