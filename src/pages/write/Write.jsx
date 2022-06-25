@@ -22,9 +22,9 @@ export default function Write() {
       data.append("name", filename);
       data.append("file", file);
       newPost.photo = filename;
-      // try {
-      //   await axios.post("https://demo-webapp-blog.herokuapp.com/api/upload", data);
-      // } catch (err) {}
+      try {
+        await axios.post("https://demo-webapp-blog.herokuapp.com/api/upload", data);
+      } catch (err) {}
     }
     try {
       const res = await axios.post("https://demo-webapp-blog.herokuapp.com/api/posts", newPost);
